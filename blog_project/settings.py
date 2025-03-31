@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount', 
     'dj_rest_auth',
     'dj_rest_auth.registration', 
+    'django_filters',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -148,7 +149,21 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
 ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 2
+    'PAGE_SIZE': 2,
+    
+    
     
     
     }
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer', 
+    ],
+}
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+}
