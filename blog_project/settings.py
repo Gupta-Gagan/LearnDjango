@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts.apps.PostsConfig',
+    'comments.apps.CommentsConfig',
+    'likes.apps.LikesConfig',
     'rest_framework',
     'rest_framework.authtoken',
     'allauth', 
@@ -46,6 +48,8 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'dj_rest_auth.registration', 
     'django_filters',
+    
+    
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
